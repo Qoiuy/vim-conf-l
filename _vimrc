@@ -70,11 +70,11 @@ inoremap <C-o> <down>
 inoremap <C-p> <up>
 "}}}
 
-""{{{ NERDTree文件浏览器插件
-"autocmd VimEnter * NERDTree " 自动加载
-"autocmd VimEnter * wincmd p " 光标放到打开的文件
-"let NERDTreeWinSize = 25 " 文件浏览窗口大小
-""}}}
+"{{{ NERDTree文件浏览器插件
+autocmd VimEnter * NERDTree " 自动加载
+autocmd VimEnter * wincmd p " 光标放到打开的文件
+let NERDTreeWinSize = 25 " 文件浏览窗口大小
+"}}}
 
 "{{{ Tabbar顶部选项卡
 let g:Tb_MaxSize = 3 " 最多三排选项卡
@@ -85,3 +85,6 @@ let g:Tb_TabWrap = 1 " 每个选项卡之间间隔
 map <C-Tab> :bn<CR>
 map <S-Tab> :bp<CR>
 "}}}
+
+"{{{ F1 --- F12快捷键
+nnoremap    <F4>         :!ctags -R<cr>
