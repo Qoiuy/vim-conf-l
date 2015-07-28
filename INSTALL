@@ -9,10 +9,15 @@ ln -s ${PWD}/_vimrc ~/.vimrc
 
 #添加自动更新emmet插件的脚本
 rm -rf ${PWD}/vim/GIT/emmet-vim
-mkdir ${PWD}/vim/GIT
 git clone https://github.com/mattn/emmet-vim.git
 mv  ${PWD}/emmet-vim  ${PWD}/vim/GIT
 cp ${PWD}/vim/GIT/emmet-vim/plugin/emmet.vim ~/.vim/plugin/
 cp ${PWD}/vim/GIT/emmet-vim/autoload/emmet.vim ~/.vim/autoload/
 cp -a ${PWD}/vim/GIT/emmet-vim/autoload/emmet ~/.vim/autoload/
 cp ${PWD}/vim/GIT/emmet-vim/doc/emmet.txt ~/.vim/doc/
+#添加删除emmet插件的脚本
+#rm -rf  ${PWD}/vim/GIT/emmet-vim
+#rm -f  ${PWD}/vim/plugin/emmet.vim
+#rm -f  ${PWD}/vim/autoload/emmet.vim
+#rm -rf  ${PWD}/vim/autoload/emmet
+#rm -f  ${PWD}/vim/doc/emmet.txt
