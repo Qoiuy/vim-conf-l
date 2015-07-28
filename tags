@@ -53,6 +53,7 @@
 <Plug>tbstop	vim/plugin/tabbar.vim	/^noremap <unique> <script> <Plug>tbstop   :call <SID>Tb_Stop(1)<CR>:<BS>$/;"	m
 <Plug>tbtoggle	vim/plugin/tabbar.vim	/^noremap <unique> <script> <Plug>tbtoggle :call <SID>Tb_Toggle()<CR>:<BS>$/;"	m
 <SID>xx	vim/plugin/taglist.vim	/^    map <SID>xx <SID>xx$/;"	m
+<leader>ff	vim/plugin/jsbeautify.vim	/^nnoremap <silent> <leader>ff :call g:Jsbeautify()<cr>$/;"	m
 Bf_BuildList	vim/plugin/tabbar.vim	/^function! <SID>Bf_BuildList(delBufNum, updateBufList)$/;"	f
 Bf_Choosed	vim/plugin/tabbar.vim	/^function! <SID>Bf_Choosed()$/;"	f
 Bf_CrSel	vim/plugin/tabbar.vim	/^function! <SID>Bf_CrSel()$/;"	f
@@ -88,6 +89,8 @@ Bookmark.str	vim/plugin/NERD_tree.vim	/^function! s:Bookmark.str()$/;"	f
 Bookmark.toRoot	vim/plugin/NERD_tree.vim	/^function! s:Bookmark.toRoot()$/;"	f
 Bookmark.validate	vim/plugin/NERD_tree.vim	/^function! s:Bookmark.validate()$/;"	f
 DEBUG	vim/plugin/tabbar.vim	/^function! <SID>DEBUG(msg, level)$/;"	f
+FGforBG	vim/after/syntax/css.vim	/^function! s:FGforBG(bg)$/;"	f
+Jsbeautify	vim/plugin/jsbeautify.vim	/^function! g:Jsbeautify()$/;"	f
 KeyMap.All	vim/plugin/NERD_tree.vim	/^function! s:KeyMap.All()$/;"	f
 KeyMap.BindAll	vim/plugin/NERD_tree.vim	/^function! s:KeyMap.BindAll()$/;"	f
 KeyMap.Create	vim/plugin/NERD_tree.vim	/^function! s:KeyMap.Create(options)$/;"	f
@@ -163,6 +166,10 @@ Path.refresh	vim/plugin/NERD_tree.vim	/^function! s:Path.refresh()$/;"	f
 Path.rename	vim/plugin/NERD_tree.vim	/^function! s:Path.rename(newPath)$/;"	f
 Path.str	vim/plugin/NERD_tree.vim	/^function! s:Path.str(...)$/;"	f
 Path.strTrunk	vim/plugin/NERD_tree.vim	/^function! s:Path.strTrunk()$/;"	f
+PreviewCSSColorInLine	vim/after/syntax/css.vim	/^function! s:PreviewCSSColorInLine(where)$/;"	f
+Rgb2xterm	vim/after/syntax/css.vim	/^function! s:Rgb2xterm(color)$/;"	f
+SetMatcher	vim/after/syntax/css.vim	/^function! s:SetMatcher(clr,pat)$/;"	f
+SetNamedColor	vim/after/syntax/css.vim	/^function! s:SetNamedColor(clr,name)$/;"	f
 TabBar	vim/plugin/tabbar.vim	/^augroup TabBar$/;"	a
 TagList_IsValid	vim/plugin/taglist.vim	/^function! TagList_IsValid()$/;"	f
 TagList_Start	vim/plugin/taglist.vim	/^function! TagList_Start()$/;"	f
@@ -370,6 +377,7 @@ Win_Find	vim/plugin/tabbar.vim	/^function! <SID>Win_Find(bufName)$/;"	f
 Win_FindOrCreate	vim/plugin/tabbar.vim	/^function! <SID>Win_FindOrCreate(bufName, forceEdge, isExplorer)$/;"	f
 Win_Goto_Main	vim/plugin/tabbar.vim	/^function! <SID>Win_Goto_Main()$/;"	f
 Win_Resize	vim/plugin/tabbar.vim	/^function! <SID>Win_Resize()$/;"	f
+Xterm2rgb	vim/after/syntax/css.vim	/^function! s:Xterm2rgb(color) $/;"	f
 activateNode	vim/plugin/NERD_tree.vim	/^function! s:activateNode(forceKeepWindowOpen)$/;"	f
 bindMappings	vim/plugin/NERD_tree.vim	/^function! s:bindMappings()$/;"	f
 bookmarkNode	vim/plugin/NERD_tree.vim	/^function! s:bookmarkNode(...)$/;"	f
@@ -386,6 +394,7 @@ closeTree	vim/plugin/NERD_tree.vim	/^function! s:closeTree()$/;"	f
 closeTreeIfOpen	vim/plugin/NERD_tree.vim	/^function! s:closeTreeIfOpen()$/;"	f
 closeTreeIfQuitOnOpen	vim/plugin/NERD_tree.vim	/^function! s:closeTreeIfQuitOnOpen()$/;"	f
 closeTreeWindow	vim/plugin/NERD_tree.vim	/^function! s:closeTreeWindow()$/;"	f
+color	vim/after/syntax/css.vim	/^   let color = s:Xterm2rgb(c)$/;"	v
 compareBookmarks	vim/plugin/NERD_tree.vim	/^function! s:compareBookmarks(first, second)$/;"	f
 compareNodes	vim/plugin/NERD_tree.vim	/^function! s:compareNodes(n1, n2)$/;"	f
 completeBookmarks	vim/plugin/NERD_tree.vim	/^function! s:completeBookmarks(A,L,P)$/;"	f
@@ -428,7 +437,159 @@ g:Tb_cTabSwitchBufs	vim/plugin/tabbar.vim	/^    let g:Tb_cTabSwitchBufs = 1$/;"	
 g:Tb_cTabSwitchWindows	vim/plugin/tabbar.vim	/^      let g:Tb_cTabSwitchWindows = 0$/;"	v
 getPath	vim/plugin/NERD_tree.vim	/^function! s:getPath(ln)$/;"	f
 getTreeWinNum	vim/plugin/NERD_tree.vim	/^function! s:getTreeWinNum()$/;"	f
+get_next_token	vim/plugin/jsbeautify.vim	/^function! s:get_next_token()$/;"	f
 handleMiddleMouse	vim/plugin/NERD_tree.vim	/^function! s:handleMiddleMouse()$/;"	f
+i	vim/after/syntax/css.vim	/^      let i = i+1$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = 1$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#000000', 'black')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#000080', 'navy')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#00008B','DarkBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#0000CD','MediumBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#0000ff', 'blue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#006400','DarkGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#008000', 'green')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#008080', 'teal')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#008B8B','DarkCyan')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#00BFFF','DeepSkyBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#00CED1','DarkTurquoise')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#00FA9A','MediumSpringGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#00FF7F','SpringGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#00FFFF','Cyan')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#00ff00', 'lime')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#00ffff', 'aqua')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#191970','MidnightBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#1E90FF','DodgerBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#20B2AA','LightSeaGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#228B22','ForestGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#2E8B57','SeaGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#2F4F4F','DarkSlateGray')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#2F4F4F','DarkSlateGrey')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#32CD32','LimeGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#3CB371','MediumSeaGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#40E0D0','Turquoise')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#4169E1','RoyalBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#4682B4','SteelBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#483D8B','DarkSlateBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#48D1CC','MediumTurquoise')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#4B0082','Indigo')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#556B2F','DarkOliveGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#5F9EA0','CadetBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#6495ED','CornflowerBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#66CDAA','MediumAquaMarine')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#696969','DimGray')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#696969','DimGrey')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#6A5ACD','SlateBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#6B8E23','OliveDrab')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#708090','SlateGray')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#708090','SlateGrey')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#778899','LightSlateGray')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#778899','LightSlateGrey')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#7B68EE','MediumSlateBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#7CFC00','LawnGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#7FFF00','Chartreuse')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#7FFFD4','Aquamarine')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#800000', 'maroon')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#800080', 'purple')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#808000', 'olive')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#808080', 'gray')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#808080','Grey')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#87CEEB','SkyBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#87CEFA','LightSkyBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#8A2BE2','BlueViolet')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#8B0000','DarkRed')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#8B008B','DarkMagenta')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#8B4513','SaddleBrown')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#8FBC8F','DarkSeaGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#90EE90','LightGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#9370D8','MediumPurple')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#9400D3','DarkViolet')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#98FB98','PaleGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#9932CC','DarkOrchid')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#9ACD32','YellowGreen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#A0522D','Sienna')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#A52A2A','Brown')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#A9A9A9','DarkGray')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#A9A9A9','DarkGrey')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#ADD8E6','LightBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#ADFF2F','GreenYellow')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#AFEEEE','PaleTurquoise')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#B0C4DE','LightSteelBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#B0E0E6','PowderBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#B22222','FireBrick')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#B8860B','DarkGoldenRod')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#BA55D3','MediumOrchid')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#BC8F8F','RosyBrown')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#BDB76B','DarkKhaki')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#C71585','MediumVioletRed')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#CD5C5C','IndianRed')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#CD853F','Peru')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#D2691E','Chocolate')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#D2B48C','Tan')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#D3D3D3','LightGray')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#D3D3D3','LightGrey')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#D87093','PaleVioletRed')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#D8BFD8','Thistle')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#DA70D6','Orchid')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#DAA520','GoldenRod')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#DC143C','Crimson')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#DCDCDC','Gainsboro')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#DDA0DD','Plum')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#DEB887','BurlyWood')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#E0FFFF','LightCyan')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#E6E6FA','Lavender')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#E9967A','DarkSalmon')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#EE82EE','Violet')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#EEE8AA','PaleGoldenRod')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F08080','LightCoral')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F0E68C','Khaki')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F0F8FF','AliceBlue')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F0FFF0','HoneyDew')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F0FFFF','Azure')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F4A460','SandyBrown')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F5DEB3','Wheat')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F5F5DC','Beige')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F5F5F5','WhiteSmoke')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F5FFFA','MintCream')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#F8F8FF','GhostWhite')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FA8072','Salmon')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FAEBD7','AntiqueWhite')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FAF0E6','Linen')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FAFAD2','LightGoldenRodYellow')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FDF5E6','OldLace')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FF00FF','Magenta')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FF1493','DeepPink')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FF4500','OrangeRed')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FF6347','Tomato')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FF69B4','HotPink')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FF7F50','Coral')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FF8C00','Darkorange')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFA07A','LightSalmon')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFB6C1','LightPink')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFC0CB','Pink')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFD700','Gold')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFDAB9','PeachPuff')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFDEAD','NavajoWhite')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFE4B5','Moccasin')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFE4C4','Bisque')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFE4E1','MistyRose')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFEBCD','BlanchedAlmond')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFEFD5','PapayaWhip')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFF0F5','LavenderBlush')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFF5EE','SeaShell')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFF8DC','Cornsilk')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFFACD','LemonChiffon')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFFAF0','FloralWhite')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFFAFA','Snow')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFFFE0','LightYellow')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#FFFFF0','Ivory')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#c0c0c0', 'silver')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#ff0000', 'red')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#ff00ff', 'fuchsia')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#ffA500', 'orange')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#ffff00', 'yellow')$/;"	v
+i	vim/after/syntax/css.vim	/^   let i = s:SetNamedColor('#ffffff', 'white')$/;"	v
+in_array	vim/plugin/jsbeautify.vim	/^function! s:in_array(what, arr)$/;"	f
+indent	vim/plugin/jsbeautify.vim	/^function! s:indent()$/;"	f
 indentLevelFor	vim/plugin/NERD_tree.vim	/^function! s:indentLevelFor(line)$/;"	f
 initNerdTree	vim/plugin/NERD_tree.vim	/^function! s:initNerdTree(name)$/;"	f
 initNerdTreeInPlace	vim/plugin/NERD_tree.vim	/^function! s:initNerdTreeInPlace(dir)$/;"	f
@@ -436,12 +597,14 @@ initNerdTreeMirror	vim/plugin/NERD_tree.vim	/^function! s:initNerdTreeMirror()$/
 initVariable	vim/plugin/NERD_tree.vim	/^function! s:initVariable(var, value)$/;"	f
 isTreeOpen	vim/plugin/NERD_tree.vim	/^function! s:isTreeOpen()$/;"	f
 isWindowUsable	vim/plugin/NERD_tree.vim	/^function! s:isWindowUsable(winnumber)$/;"	f
+is_js	vim/plugin/jsbeautify.vim	/^function! s:is_js()$/;"	f
 jumpToChild	vim/plugin/NERD_tree.vim	/^function! s:jumpToChild(direction)$/;"	f
 jumpToFirstChild	vim/plugin/NERD_tree.vim	/^function! s:jumpToFirstChild()$/;"	f
 jumpToLastChild	vim/plugin/NERD_tree.vim	/^function! s:jumpToLastChild()$/;"	f
 jumpToParent	vim/plugin/NERD_tree.vim	/^function! s:jumpToParent()$/;"	f
 jumpToRoot	vim/plugin/NERD_tree.vim	/^function! s:jumpToRoot()$/;"	f
 jumpToSibling	vim/plugin/NERD_tree.vim	/^function! s:jumpToSibling(forward)$/;"	f
+loaded_jsbeautify	vim/plugin/jsbeautify.vim	/^let loaded_jsbeautify = 3$/;"	v
 loaded_nerd_tree	vim/plugin/NERD_tree.vim	/^let loaded_nerd_tree = 1$/;"	v
 loaded_taglist	vim/plugin/taglist.vim	/^            let loaded_taglist = 'no'$/;"	v
 loaded_taglist	vim/plugin/taglist.vim	/^        let loaded_taglist = 'no'$/;"	v
@@ -453,16 +616,22 @@ openEntrySplit	vim/plugin/NERD_tree.vim	/^function! s:openEntrySplit(vertical, f
 openExplorer	vim/plugin/NERD_tree.vim	/^function! s:openExplorer()$/;"	f
 openInNewTab	vim/plugin/NERD_tree.vim	/^function! s:openInNewTab(stayCurrentTab)$/;"	f
 openNodeRecursively	vim/plugin/NERD_tree.vim	/^function! s:openNodeRecursively()$/;"	f
+pow	vim/after/syntax/css.vim	/^function! s:pow(x, n)$/;"	f
 previewNode	vim/plugin/NERD_tree.vim	/^function! s:previewNode(openNewWin)$/;"	f
+print_newline	vim/plugin/jsbeautify.vim	/^function! s:print_newline(ignore_repeated) $/;"	f
+print_space	vim/plugin/jsbeautify.vim	/^function! s:print_space()$/;"	f
+print_token	vim/plugin/jsbeautify.vim	/^function! s:print_token()$/;"	f
 promptToDelBuffer	vim/plugin/NERD_tree.vim	/^function! s:promptToDelBuffer(bufnum, msg)$/;"	f
 putCursorInTreeWin	vim/plugin/NERD_tree.vim	/^function! s:putCursorInTreeWin()$/;"	f
 putCursorOnBookmarkTable	vim/plugin/NERD_tree.vim	/^function! s:putCursorOnBookmarkTable()$/;"	f
 refreshCurrent	vim/plugin/NERD_tree.vim	/^function! s:refreshCurrent()$/;"	f
 refreshRoot	vim/plugin/NERD_tree.vim	/^function! s:refreshRoot()$/;"	f
+remove_indent	vim/plugin/jsbeautify.vim	/^function! s:remove_indent()$/;"	f
 renderBookmarks	vim/plugin/NERD_tree.vim	/^function! s:renderBookmarks()$/;"	f
 renderView	vim/plugin/NERD_tree.vim	/^function! s:renderView()$/;"	f
 renderViewSavingPosition	vim/plugin/NERD_tree.vim	/^function! s:renderViewSavingPosition()$/;"	f
 restoreScreenState	vim/plugin/NERD_tree.vim	/^function! s:restoreScreenState()$/;"	f
+restore_mode	vim/plugin/jsbeautify.vim	/^function! s:restore_mode()$/;"	f
 revealBookmark	vim/plugin/NERD_tree.vim	/^function! s:revealBookmark(name)$/;"	f
 s:Bookmark	vim/plugin/NERD_tree.vim	/^let s:Bookmark = {}$/;"	v
 s:DBG_LN_CNT	vim/plugin/tabbar.vim	/^let s:DBG_LN_CNT = 0$/;"	v
@@ -476,7 +645,10 @@ s:Path	vim/plugin/NERD_tree.vim	/^let s:Path = {}$/;"	v
 s:Tlist_Skip_Refresh	vim/plugin/taglist.vim	/^let s:Tlist_Skip_Refresh = 0$/;"	v
 s:TreeDirNode	vim/plugin/NERD_tree.vim	/^let s:TreeDirNode = copy(s:TreeFileNode)$/;"	v
 s:TreeFileNode	vim/plugin/NERD_tree.vim	/^let s:TreeFileNode = {}$/;"	v
+s:b	vim/after/syntax/css.vim	/^      let s:b = strridx(s:olddef,'matchgroup')$/;"	v
+s:basic16	vim/after/syntax/css.vim	/^let s:basic16 = [ [ 0x00, 0x00, 0x00 ], [ 0xCD, 0x00, 0x00 ], [ 0x00, 0xCD, 0x00 ], [ 0xCD, 0xCD, 0x00 ], [ 0x00, 0x00, 0xEE ], [ 0xCD, 0x00, 0xCD ], [ 0x00, 0xCD, 0xCD ], [ 0xE5, 0xE5, 0xE5 ], [ 0x7F, 0x7F, 0x7F ], [ 0xFF, 0x00, 0x00 ], [ 0x00, 0xFF, 0x00 ], [ 0xFF, 0xFF, 0x00 ], [ 0x5C, 0x5C, 0xFF ], [ 0xFF, 0x00, 0xFF ], [ 0x00, 0xFF, 0xFF ], [ 0xFF, 0xFF, 0xFF ] ]$/;"	v
 s:clickmap	vim/plugin/tabbar.vim	/^    let s:clickmap = ':if bufname("%") == "-TabBar-" <bar> call <SID>Tb_Click() <bar> endif <CR>'$/;"	v
+s:colortable	vim/after/syntax/css.vim	/^let s:colortable=[]$/;"	v
 s:cpo_save	vim/plugin/taglist.vim	/^let s:cpo_save = &cpo$/;"	v
 s:escape_chars	vim/plugin/NERD_tree.vim	/^    let s:escape_chars =  " \\\\`\\|\\"#%&,?()\\*^<>[]"$/;"	v
 s:escape_chars	vim/plugin/NERD_tree.vim	/^    let s:escape_chars =  " `\\|\\"#%&,?()\\*^<>"$/;"	v
@@ -544,8 +716,10 @@ s:tlist_winsize_chgd	vim/plugin/taglist.vim	/^let s:tlist_winsize_chgd = -1$/;"	
 s:tree_markup_reg	vim/plugin/NERD_tree.vim	/^let s:tree_markup_reg = '^[ `|]*[\\-+~в–ѕв–ё ]\\+'$/;"	v
 s:tree_up_dir_line	vim/plugin/NERD_tree.vim	/^let s:tree_up_dir_line = '.. (up a dir)'$/;"	v
 s:tree_wid	vim/plugin/NERD_tree.vim	/^let s:tree_wid = 2$/;"	v
+s:valuerange	vim/after/syntax/css.vim	/^let s:valuerange = [ 0x00, 0x5F, 0x87, 0xAF, 0xD7, 0xFF ]$/;"	v
 saveScreenState	vim/plugin/NERD_tree.vim	/^function! s:saveScreenState()$/;"	f
 setCommonBufOptions	vim/plugin/NERD_tree.vim	/^function! s:setCommonBufOptions()$/;"	f
+set_mode	vim/plugin/jsbeautify.vim	/^function! s:set_mode(mode)$/;"	f
 setupStatusline	vim/plugin/NERD_tree.vim	/^function! s:setupStatusline()$/;"	f
 showMenu	vim/plugin/NERD_tree.vim	/^function! s:showMenu()$/;"	f
 stripMarkupFromLine	vim/plugin/NERD_tree.vim	/^function! s:stripMarkupFromLine(line, removeLeadingSpaces)$/;"	f
@@ -558,6 +732,8 @@ toggleShowHidden	vim/plugin/NERD_tree.vim	/^function! s:toggleShowHidden()$/;"	f
 toggleZoom	vim/plugin/NERD_tree.vim	/^function! s:toggleZoom()$/;"	f
 treeExistsForBuf	vim/plugin/NERD_tree.vim	/^function! s:treeExistsForBuf()$/;"	f
 treeExistsForTab	vim/plugin/NERD_tree.vim	/^function! s:treeExistsForTab()$/;"	f
+trim_output	vim/plugin/jsbeautify.vim	/^function! s:trim_output()$/;"	f
+unindent	vim/plugin/jsbeautify.vim	/^function! s:unindent()$/;"	f
 unique	vim/plugin/NERD_tree.vim	/^function! s:unique(list)$/;"	f
 upDir	vim/plugin/NERD_tree.vim	/^function! s:upDir(keepState)$/;"	f
 ±	vim/plugin/tabbar.vim	/^            noremap <unique> <script> ± :call <SID>Bf_SwitchTo( 1)<CR>:<BS>$/;"	m
